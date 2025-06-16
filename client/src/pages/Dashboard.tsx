@@ -17,7 +17,7 @@ export function Dashboard() {
 
   useEffect(() => {
     refresh();
-  }, [modalOpen ])
+  }, [modalOpen])
 
 
   return (
@@ -33,7 +33,7 @@ export function Dashboard() {
                 setModalOpen(true)
               }} variant="primary"  text="Add Content" startIcon={<PlusIcon /> }/>
               <Button onClick={async() => {
-                const response = await axios.post(`${BACKEND_URL}/api/v1/brain/share`, {
+                const response = await axios.post(`${BACKEND_URL}/api/v1/user/secondBrain/share`, {
                   share: true
                 }, {
                   headers: {

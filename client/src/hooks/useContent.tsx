@@ -5,7 +5,7 @@ export function useContent() {
     const [contents, setContents] = useState([]);
     
     function refresh() {
-        axios.get(`${BACKEND_URL}/api/v1/content`, {
+        axios.get(`${BACKEND_URL}/api/v1/user/content`, {
             headers: {
                 "Authorization": localStorage.getItem("token")
             }
@@ -16,7 +16,7 @@ export function useContent() {
     }
     useEffect(() => {
         refresh()
-        let interval = setInterval(() => {
+        const interval = setInterval(() => {
             refresh()
         }, 2*1000)
         return () => {
